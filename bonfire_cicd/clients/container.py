@@ -113,7 +113,7 @@ class PodmanImages:
     def pull(repository: str, tag: Optional[str] = None, all_tags: bool = False, **kwargs) -> str:
         """Run podman pull."""
         all_tags_arg = "--all-tags" if all_tags else ""
-        tag_arg = f":{tag}" or ""
+        tag_arg = f":{tag}" if tag else ""
         result = run(f"podman pull {repository}{tag_arg} {all_tags_arg}")
         return result.stdout
 
