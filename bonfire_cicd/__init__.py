@@ -77,7 +77,7 @@ def build(clients):
         quay_api_token=QUAY_API_TOKEN,
         rh_registry_user=RH_REGISTRY_USER,
         rh_registry_token=RH_REGISTRY_TOKEN,
-        is_pull_request=strtobool(PR_ID),
+        is_pull_request=bool(PR_ID),
         dockerfile=DOCKERFILE,
         cache_from_latest=strtobool(CACHE_FROM_LATEST_IMAGE),
     )
